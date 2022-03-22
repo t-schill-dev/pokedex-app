@@ -20,3 +20,12 @@ let pokemonList = [{
     }
 
 ];
+
+for (let i = 0; i < pokemonList.length; i++) {
+    // Distinguish items by height using a conditional
+    if (pokemonList[i].height > 1) {
+        document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + "m ) " + "- That's really big!")
+    } else {
+        document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + "m )");
+    }
+}
