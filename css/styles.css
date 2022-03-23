@@ -2,7 +2,7 @@
 
 :root {
     --background: #547E2A;
-    --item-background: #542A7E;
+    --item-text: #542A7E;
 }
 
 * {
@@ -23,7 +23,7 @@ body {
     background-color: var(--background);
 }
 
-.pokemon-list {
+.pokemon-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 200px);
@@ -31,8 +31,38 @@ body {
     margin: 50px 20px;
 }
 
+
+/*
 .pokemon-item {
     background-color: var(--item-background);
     border: solid black;
     list-style-type: none;
+}
+*/
+
+.pokemon-item {
+    color: white;
+    line-height: 1.5;
+    padding: 8px 1rem;
+    background-color: var(--item-text);
+    border-radius: 8px;
+    box-shadow: 1px 3px 13px #18181822;
+    margin: 1rem auto;
+    width: 500px;
+    position: relative;
+    list-style-type: none;
+}
+
+.pokemon-item::before {
+    display: block;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    border: none;
+    background: yellowgreen;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
 }

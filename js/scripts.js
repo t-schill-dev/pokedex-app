@@ -20,12 +20,36 @@ let pokemonList = [{
     }
 
 ];
-
+//Creates list before inner loop
+document.write(
+    "<ul class='pokemon-container'>"
+);
 for (let i = 0; i < pokemonList.length; i++) {
+
     // Distinguish items by height using a conditional
     if (pokemonList[i].height > 1) {
-        document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + "m ) " + "- That's really big!")
+        document.write(
+            "<li class='pokemon-item'>" +
+            pokemonList[i].name +
+            " (height: " +
+            pokemonList[i].height +
+            "m ) " +
+            "- That's really big!" +
+            "</li>"
+        );
     } else {
-        document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + "m )");
+        document.write(
+            "<li class='pokemon-item'>" +
+            pokemonList[i].name +
+            " (height: " +
+            pokemonList[i].height +
+            "m ) " +
+            "</li>"
+        );
     }
+
 }
+//Cloeses list tag
+document.write(
+    "</ul>"
+);
