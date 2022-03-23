@@ -31,15 +31,6 @@ body {
     margin: 50px 20px;
 }
 
-
-/*
-.pokemon-item {
-    background-color: var(--item-background);
-    border: solid black;
-    list-style-type: none;
-}
-*/
-
 .pokemon-item {
     color: white;
     line-height: 1.5;
