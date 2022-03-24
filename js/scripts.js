@@ -18,38 +18,35 @@ let pokemonList = [{
         height: 1.4,
         type: ['ground', 'poison']
     }
-
 ];
 //Creates list before inner loop
 document.write(
     "<ul class='pokemon-container'>"
 );
-for (let i = 0; i < pokemonList.length; i++) {
-
-    // Distinguish items by height using a conditional
-    if (pokemonList[i].height > 1) {
-        document.write(
-            "<li class='pokemon-item'>" +
-            pokemonList[i].name +
-            " (height: " +
-            pokemonList[i].height +
-            "m ) " +
-            "- That's really big!" +
-            "</li>"
-        );
-    } else {
-        document.write(
-            "<li class='pokemon-item'>" +
-            pokemonList[i].name +
-            " (height: " +
-            pokemonList[i].height +
-            "m ) " +
-            "</li>"
-        );
-    }
-
-}
-//Cloeses list tag
+pokemonList.forEach(function(item) {
+        // Distinguish items by height using a conditional
+        if (item.height > 1) {
+            document.write(
+                "<li class='pokemon-item'>" +
+                item.name +
+                " (height: " +
+                item.height +
+                "m ) " +
+                "- That's really big!" +
+                "</li>"
+            );
+        } else {
+            document.write(
+                "<li class='pokemon-item'>" +
+                item.name +
+                " (height: " +
+                item.height +
+                "m ) " +
+                "</li>"
+            );
+        }
+    })
+    //Closes list tag
 document.write(
     "</ul>"
 );
