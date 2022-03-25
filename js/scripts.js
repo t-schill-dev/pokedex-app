@@ -38,34 +38,42 @@ let pokemonRepository = (function() {
         getAll
     };
 })();
-//Creates list before inner loop
-document.write(
-    "<ul class='pokemon-container'>"
-);
+// //Creates list before inner loop
+// document.write(
+//     "<ul class='pokemon-container'>"
+// );
 pokemonRepository.getAll().forEach(function(item) {
-        // Distinguish items by height using a conditional
-        if (item.height > 1) {
-            document.write(
-                "<li class='pokemon-item'>" +
-                item.name +
-                " (height: " +
-                item.height +
-                "m ) " +
-                "- That's really big!" +
-                "</li>"
-            );
-        } else {
-            document.write(
-                "<li class='pokemon-item'>" +
-                item.name +
-                " (height: " +
-                item.height +
-                "m ) " +
-                "</li>"
-            );
-        }
-    })
-    //Closes list tag
-document.write(
-    "</ul>"
-);
+    // Distinguish items by height using a conditional
+    let pokemonContainer = document.querySelector('ul');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = item.name;
+    button.classList.add('pokemon-item');
+    listItem.appendChild(button);
+    pokemonContainer.appendChild(listItem);
+})
+
+//         if (item.height > 1) {
+//             document.write(
+//                 "<li class='pokemon-item'>" +
+//                 item.name +
+//                 " (height: " +
+//                 item.height +
+//                 "m ) " +
+//                 "- That's really big!" +
+//                 "</li>"
+//             );
+//         } else {
+//             document.write(
+//                 "<li class='pokemon-item'>" +
+//                 item.name +
+//                 " (height: " +
+//                 item.height +
+//                 "m ) " +
+//                 "</li>"
+//             );
+//         }
+//     })
+//     //Closes list tag
+// document.write(
+//     "</ul>"
