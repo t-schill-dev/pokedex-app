@@ -1,3 +1,4 @@
+//Limited accessibility through IIFE
 let pokemonRepository = (function() {
 
     let pokemonList = [{
@@ -23,7 +24,10 @@ let pokemonRepository = (function() {
     ];
 
     function add(pokemon) {
-        return pokemonList.push(pokemon);
+        if (typeof pokemon === 'object' &&
+            Object.keys(pokemon).toString() === 'name,height,type') {
+            return pokemonList.push(pokemon);
+        }
     }
 
     function getAll() {
