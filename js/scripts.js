@@ -27,6 +27,8 @@ let pokemonRepository = (function() {
         if (typeof pokemon === 'object' &&
             Object.keys(pokemon).toString() === 'name,height,type') {
             return pokemonList.push(pokemon);
+        } else {
+            console.log('pokemon needs name, height, type');
         }
     }
 
