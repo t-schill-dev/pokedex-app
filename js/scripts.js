@@ -66,25 +66,3 @@ let pokemonRepository = (function() {
 pokemonRepository.getAll().forEach(function(pokemon) {
     pokemonRepository.addListItem(pokemon);
 })
-
-//         if (item.height > 1) {
-//             document.write(
-//                 "<li class='pokemon-item'>" +
-//                 item.name +
-//                 " (height: " +
-//                 item.height +
-//                 "m ) " +
-//                 "- That's really big!" +
-//                 "</li>"
-//             );
-//         } else {
-//             document.write(
-//                 "<li class='pokemon-item'>" +
-//                 item.name +
-//                 " (height: " +
-//                 item.height +
-//                 "m ) " +
-//                 "</li>"
-//             );
-//         }
-//     })
