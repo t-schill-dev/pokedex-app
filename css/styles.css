@@ -2,7 +2,7 @@
 
 :root {
     --background: #547E2A;
-    --item-text: #542A7E;
+    --item-background: #542A7E;
 }
 
 * {
@@ -27,20 +27,21 @@ body {
 .pokemon-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 200px);
-    grid-gap: 10px;
-    margin: 50px 20px;
+    grid-template-rows: repeat(2, 50px);
+    grid-gap: 5px;
+    margin: 20px 20px;
 }
 
 .pokemon-item {
     color: white;
+    font-weight: 600;
     line-height: 1.5;
     padding: 8px 1rem;
-    background-color: var(--item-text);
+    background-color: var(--item-background);
     border-radius: 8px;
-    box-shadow: 1px 3px 13px #18181822;
+    box-shadow: 1px 2px 3px rgba(99, 96, 96, 0.1);
     margin: 1rem auto;
-    width: 500px;
+    width: 100%;
     position: relative;
 }
 
