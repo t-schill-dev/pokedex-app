@@ -15,10 +15,6 @@ let pokemonRepository = (function() {
         return pokemonList;
     }
 
-    function showDetails(pokemon) {
-        console.log(pokemon);
-    }
-
     function addListItem(pokemon) {
         // Create button for each pokemon passed on
         let pokemonContainer = document.querySelector('ul');
@@ -29,16 +25,22 @@ let pokemonRepository = (function() {
         listItem.appendChild(button);
         pokemonContainer.appendChild(listItem);
         // Show details of clicked Pokemon
+        button.addEventListener('click', function(event) {
+            showDetails(pokemon)
+        });
     }
 
-    function addEvent(button, pokemon) {
-        button.addEventListener('click', showDetails(pokemon));
-    }
+    // function addEvent(pokemon) {
+    //     button.addEventListener('click', function(event) {
+    //         showDetails(pokemon)
+    //     });
+    // }
 
     function loadList() {
         return fetch(apiURL).then(function(response) {
             return response.json();
         }).then(function(json) {
+            // results refers to the key of the json object which contains the list
             json.results.forEach(function(item) {
                 let pokemon = {
                     name: item.name,
@@ -50,12 +52,35 @@ let pokemonRepository = (function() {
             console.log(e);
         })
     }
+
+    function loadDetails(item) {
+        let url = item.detailsUrl;
+        return fetch(url).then(function(response) {
+            return response.json();
+        }).then(function(details) {
+            item.imageUrl = details.sprites.front_default;
+            item.height = details.height;
+            item.types = details.types;
+        }).catch(function(e) {
+            console.log(e);
+        });
+    }
+    // Is called by the event listener in addListItem function
+    function showDetails(pokemon) {
+        loadDetails(pokemon).then(function() {
+            console.log(pokemon);
+        });
+    }
+
     // Simplified return statement when key === value e.g. add: add
     return {
         add,
         getAll,
         addListItem,
-        loadList
+        loadList,
+        loadDetails,
+        showDetails
+
     };
 })();
 
