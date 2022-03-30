@@ -3,6 +3,7 @@
 :root {
     --background: #547E2A;
     --item-background: #542A7E;
+    --text-color: #F7F5F2;
 }
 
 * {
@@ -16,6 +17,7 @@ ul {
 
 header {
     text-align: center;
+    color: var(--text-color);
 }
 
 body {
@@ -26,21 +28,21 @@ body {
 
 .pokemon-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 50px);
+    grid-template-columns: repeat(2, 300px);
     grid-gap: 5px;
-    margin: 20px 20px;
+    margin: 10px 10px;
+    justify-content: center;
 }
 
 .pokemon-item {
-    color: white;
+    color: var(--text-color);
     font-weight: 600;
     line-height: 1.5;
     padding: 8px 1rem;
     background-color: var(--item-background);
     border-radius: 8px;
     box-shadow: 1px 2px 3px rgba(99, 96, 96, 0.1);
-    margin: 1rem auto;
+    margin: auto;
     width: 100%;
     position: relative;
 }
@@ -57,4 +59,10 @@ body {
     top: 50%;
     left: 10%;
     transform: translateY(-50%);
+}
+
+@media screen and (max-width: 650px) {
+    .pokemon-container {
+        grid-template-columns: 300px;
+    }
 }
