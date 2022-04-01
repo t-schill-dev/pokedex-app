@@ -54,7 +54,7 @@ let pokemonRepository = (function() {
         return fetch(url).then(function(response) {
             return response.json();
         }).then(function(details) {
-            item.imageUrl = details.sprites.front_default;
+            item.imageUrl = details.sprites.other.dream_world.front_default;
             item.height = details.height;
             item.types = details.types;
         }).catch(function(e) {
@@ -66,7 +66,7 @@ let pokemonRepository = (function() {
     let modalContainer = document.querySelector('#modal-container');
 
     // Create modal with details
-    function showModal(name, height, type) {
+    function showModal(name, height, type, img) {
         modalContainer.innerHTML = '';
         let modal = document.createElement('div');
         modal.classList.add('modal');
@@ -81,8 +81,8 @@ let pokemonRepository = (function() {
         titleElement.innerText = name;
 
         let contentElement = document.createElement('p');
-        contentElement.innerText = height;
-        contentElement.innerText = type;
+        contentElement.innerText = "Height: " + height + "m, " + "Type: " + type;
+
 
         modal.appendChild(closeButtonElement);
         modal.appendChild(titleElement);
@@ -110,7 +110,7 @@ let pokemonRepository = (function() {
     // Is called by the event listener in addListItem function
     function showDetails(pokemon) {
         loadDetails(pokemon).then(() => {
-            showModal(pokemon.name, pokemon.height, pokemon.types);
+            showModal(pokemon.name, pokemon.height, pokemon.types[0].type.name);
         });
     }
 
