@@ -57,6 +57,7 @@ let pokemonRepository = (function() {
             item.imageUrl = details.sprites.other.dream_world.front_default;
             item.height = details.height;
             item.types = details.types;
+            return item;
         }).catch(function(e) {
             console.log(e);
         });
@@ -66,7 +67,7 @@ let pokemonRepository = (function() {
     let modalContainer = document.querySelector('#modal-container');
 
     // Create modal with details
-    function showModal(name, height, type, img) {
+    function showModal(pokemonInfo) {
         modalContainer.innerHTML = '';
         let modal = document.createElement('div');
         modal.classList.add('modal');
@@ -78,15 +79,16 @@ let pokemonRepository = (function() {
         closeButtonElement.addEventListener('click', hideModal);
 
         let titleElement = document.createElement('h1');
-        titleElement.innerText = name;
+        titleElement.innerText = pokemonInfo.name;
 
 
 
         let contentElement = document.createElement('p');
-        contentElement.innerText = "Height: " + height + "m, " + "Type: " + type;
+        contentElement.innerText = "Height: " + pokemonInfo.height + "m, " +
+            "Type: " + pokemonInfo.types[0].type.name;
 
         let pokemonImg = document.createElement('img');
-        pokemonImg.src = img;
+        pokemonImg.src = pokemonInfo.imageUrl;
 
         modal.appendChild(closeButtonElement);
         modal.appendChild(pokemonImg);
@@ -114,8 +116,8 @@ let pokemonRepository = (function() {
 
     // Is called by the event listener in addListItem function
     function showDetails(pokemon) {
-        loadDetails(pokemon).then(() => {
-            showModal(pokemon.name, pokemon.height, pokemon.types[0].type.name, pokemon.imageUrl);
+        loadDetails(pokemon).then((pokemonInfo) => {
+            showModal(pokemonInfo);
         });
     }
 
