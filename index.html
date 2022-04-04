@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/e5873edc14.js" crossorigin="anonymous"></script>
 
     <title>Simple JS App</title>
 </head>
@@ -14,8 +15,15 @@
 <body>
     <main>
         <header>
+
             <h1>pokedek </h1>
+            <div id="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" name="Search" placeholder="Search">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </div>
             <p>Find your favorite pokemon</p>
+
         </header>
         <ul class="pokemon-container"></ul>
         <div id="modal-container"></div>
