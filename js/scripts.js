@@ -80,11 +80,16 @@ let pokemonRepository = (function() {
         let titleElement = document.createElement('h1');
         titleElement.innerText = name;
 
+
+
         let contentElement = document.createElement('p');
         contentElement.innerText = "Height: " + height + "m, " + "Type: " + type;
 
+        let pokemonImg = document.createElement('img');
+        pokemonImg.src = img;
 
         modal.appendChild(closeButtonElement);
+        modal.appendChild(pokemonImg);
         modal.appendChild(titleElement);
         modal.appendChild(contentElement);
         modalContainer.appendChild(modal);
@@ -110,7 +115,7 @@ let pokemonRepository = (function() {
     // Is called by the event listener in addListItem function
     function showDetails(pokemon) {
         loadDetails(pokemon).then(() => {
-            showModal(pokemon.name, pokemon.height, pokemon.types[0].type.name);
+            showModal(pokemon.name, pokemon.height, pokemon.types[0].type.name, pokemon.imageUrl);
         });
     }
 
