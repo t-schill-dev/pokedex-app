@@ -16,18 +16,29 @@ let pokemonRepository = (function() {
     }
 
     function addListItem(pokemon) {
-        // Create button for each pokemon passed on
-        let pokemonContainer = document.querySelector('ul');
-        let listItem = document.createElement('li');
+
+        //Create listItem divs, and button
+        let listItem = document.createElement('div');
         let button = document.createElement('button');
 
+        //set bootstrap classes and text to divs
+        $(listItem).addClass("list-group-item col-lg-4 col-md-6 col-sm-12");
+
+        // Classes and attributes for button
         button.innerText = pokemon.name;
-        button.classList.add('pokemon-item');
-        listItem.appendChild(button);
-        pokemonContainer.appendChild(listItem);
+        $(button).addClass("pokemon-item btn bt-primary");
+        $(button).attr(("type", "button"),
+            ("data-toggle", "modal"),
+            ("data-target", "#pokemon-modal"));
+
+        // Append items to DOM elements
+        listItem.append(button);
+        $("#pokemonList").append(listItem);
+
 
         // Show details of clicked Pokemon
-        button.addEventListener('click', function(event) {
+        $(button).on('click', () => {
+            button.addClass('active');
             showDetails(pokemon);
         });
     }
