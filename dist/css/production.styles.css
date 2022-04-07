@@ -1,0 +1,89 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+
+/* Variables*/
+
+:root {
+    --background: #EEEEEE;
+    --module-color-yellow: #FFE000;
+    --header-text: #3A3845;
+    --module-text: #2032BC;
+    --text-color: #F7F5F2;
+}
+
+body {
+    background-color: var(--background);
+}
+
+#header-img {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    right: 50px;
+}
+
+.navbar {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: var(--header-text);
+    border-bottom: #1f2617;
+    border-bottom: 3px solid rgba(64, 59, 74, 0.8);
+    padding: 8px;
+    height: 100px;
+}
+
+.container-fluid {
+    margin-top: 150px;
+}
+
+#pokemon-list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.list-group-item {
+    background-color: var(--background);
+    border: none;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--module-text);
+}
+
+.btn {
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    border: 1px solid #c7a008;
+    font-size: 24px;
+    font-weight: 500;
+    color: #0c1c9c;
+    background-color: var(--module-color-yellow);
+}
+
+.btn:hover {
+    background-color: #f4d869;
+}
+
+@media screen and (max-width: 500px) {
+    #header-img {
+        display: none;
+    }
+    h1 {
+        font-size: 24px;
+    }
+}
