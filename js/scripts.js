@@ -26,7 +26,7 @@ let pokemonRepository = (function() {
 
         // Classes and attributes for button
         $(button).text(pokemon.name);
-        $(button).addClass("btn bt-primary");
+        $(button).addClass("btn btn-block pokemon-btn");
         $(button).attr("type", "button");
         $(button).attr("data-toggle", "modal");
         $(button).attr("data-target", "#pokemon-modal");
@@ -74,7 +74,6 @@ let pokemonRepository = (function() {
 
     // Create modal with details
     function showModal(pokemonInfo) {
-
         $('.modal-title').empty().append(pokemonInfo.name);
         $('.modal-body_image').attr("src", pokemonInfo.imageUrl);
         $('.modal-body_attributes').empty().append("Height: " + pokemonInfo.height + "m, " +
