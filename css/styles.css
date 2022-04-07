@@ -2,20 +2,14 @@
 
 :root {
     --background: #EEEEEE;
-    --header-color-red: #E83A14;
     --module-color-yellow: #FFE000;
     --header-text: #3A3845;
-    --module-text: #0E185F;
+    --module-text: #2032BC;
     --text-color: #F7F5F2;
 }
 
 body {
     background-color: var(--background);
-}
-
-.page-header {
-    background-color: var(--header-color-red);
-    overflow: hidden;
 }
 
 #header-img {
@@ -32,18 +26,16 @@ body {
     border-bottom: 3px solid rgba(64, 59, 74, 0.8);
     padding: 8px;
     height: 100px;
-    overflow: hidden;
 }
 
 .container-fluid {
-    margin-top: 100px;
+    margin-top: 150px;
 }
 
 #pokemon-list {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
 }
 
 .list-group-item {
