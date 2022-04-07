@@ -2,11 +2,11 @@
 let pokemonRepository = (function() {
 
     let pokemonList = [];
-    let apiURL = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+    let apiURL = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
     // add Pokemon to list and validate its input keys
     function add(pokemon) {
-        if (typeof pokemon === 'object') {
+        if (typeof pokemon === "object") {
             return pokemonList.push(pokemon);
         }
     }
@@ -18,8 +18,8 @@ let pokemonRepository = (function() {
     function addListItem(pokemon) {
 
         //Create listItem divs, and button
-        let listItem = document.createElement('div');
-        let button = document.createElement('button');
+        let listItem = document.createElement("div");
+        let button = document.createElement("button");
 
         //set bootstrap classes to divs
         $(listItem).addClass("list-group-item col-lg-4 col-md-6 col-sm-12");
@@ -36,7 +36,7 @@ let pokemonRepository = (function() {
         $("#pokemon-list").append(listItem);
 
         // Show details of clicked Pokemon
-        $(button).on('click', () => {
+        $(button).on("click", () => {
             showDetails(pokemon);
         });
     }
@@ -74,9 +74,9 @@ let pokemonRepository = (function() {
 
     // Create modal with details
     function showModal(pokemonInfo) {
-        $('.modal-title').empty().append(pokemonInfo.name);
-        $('.modal-body_image').attr("src", pokemonInfo.imageUrl);
-        $('.modal-body_attributes').empty().append("Height: " + pokemonInfo.height + "m, " +
+        $(".modal-title").empty().append(pokemonInfo.name);
+        $(".modal-body_image").attr("src", pokemonInfo.imageUrl);
+        $(".modal-body_attributes").empty().append("Height: " + pokemonInfo.height + "m, " +
             "Type: " + pokemonInfo.types[0].type.name);
     }
 
@@ -101,6 +101,6 @@ let pokemonRepository = (function() {
 
 pokemonRepository.loadList().then(function() {
     pokemonRepository.getAll().forEach(function(pokemon) {
-        pokemonRepository.addListItem(pokemon)
+        pokemonRepository.addListItem(pokemon);
     });
 });
