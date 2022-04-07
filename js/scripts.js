@@ -35,14 +35,11 @@ let pokemonRepository = (function() {
         $(listItem).append(button);
         $("#pokemon-list").append(listItem);
 
-
         // Show details of clicked Pokemon
         $(button).on('click', () => {
-
             showDetails(pokemon);
         });
     }
-
 
     function loadList() {
         return fetch(apiURL).then(function(response) {
@@ -58,7 +55,7 @@ let pokemonRepository = (function() {
             });
         }).catch(function(e) {
             console.log(e);
-        })
+        });
     }
 
     function loadDetails(item) {
@@ -89,10 +86,6 @@ let pokemonRepository = (function() {
         loadDetails(pokemon).then((pokemonInfo) => {
             showModal(pokemonInfo);
         });
-    }
-
-    function hideModal() {
-        modalContainer.classList.remove('is-visible');
     }
 
     // Simplified return statement when key === value e.g. add: add
