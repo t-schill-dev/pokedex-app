@@ -78,11 +78,11 @@ body {
 }
 */
 
-#modal-container {
-    display: none;
+#pokemon-list {
+    flex-direction: row;
 }
 
-#modal-container.is-visible {
+modal {
     position: fixed;
     padding: 20px;
     box-sizing: border-box;
