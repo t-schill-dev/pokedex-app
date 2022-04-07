@@ -18,6 +18,13 @@ body {
     overflow: hidden;
 }
 
+#header-img {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    right: 50px;
+}
+
 .navbar {
     align-items: center;
     color: var(--header-text);
@@ -71,4 +78,13 @@ body {
 
 .btn:hover {
     background-color: #f4d869;
+}
+
+@media screen and (max-width: 500px) {
+    #header-img {
+        display: none;
+    }
+    h1 {
+        font-size: 24px;
+    }
 }
