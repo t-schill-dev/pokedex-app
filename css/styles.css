@@ -35,18 +35,6 @@ body {
     overflow: hidden;
 }
 
-#search-wrapper {
-    justify-content: space-between;
-    /* font-size: 2rem;
-    border-radius: 1rem;
-    padding: 5px;
-    margin: 5px;
-    width: 300px;
-    height: 2.5rem;
-    align-items: center;
-    background-color: #F7E9D7; */
-}
-
 .container-fluid {
     margin-top: 100px;
 }
