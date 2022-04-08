@@ -21,7 +21,7 @@ This project was built from scratch with HTML, CSS and JavaScript. Towards the e
 
 * HTML
 * CSS
-*JavaScript
+* JavaScript
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
 * [External PokeAPI](https://pokeapi.co/)
