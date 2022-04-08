@@ -22,11 +22,6 @@ body {
     margin-right: 20px;
 }
 
-#search-button {
-    line-height: 1.5rem;
-    border-bottom: 1px solid var(--module-text);
-}
-
 .navbar {
     font-size: 1.5rem;
     border-bottom: #1f2617;
