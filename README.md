@@ -8,11 +8,7 @@
 
 The objective was, to build a small web application with HTML, CSS, and JavaScript that loads data from an external API and enables the viewing of data points in detail
 
-
-Use the `BLANK_README.md` to get started.
-
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 ### Built With
@@ -27,7 +23,6 @@ This project was built from scratch with HTML, CSS and JavaScript. Towards the e
 * [External PokeAPI](https://pokeapi.co/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- GETTING STARTED -->
@@ -55,11 +50,8 @@ Project Link: [https://t-schill-dev.github.io/pokedex-app](https://t-schill-dev.
 ## Acknowledgments
 
 Closely working with CareerFoundry and colaborating with students to make this project happen
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/timon-schill-579b1816a/)
