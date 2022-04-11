@@ -38,6 +38,18 @@ body {
     min-height: 120px;
 }
 
+#search-pokemon {
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+#search-pokemon:focus,
+#search-pokemon:hover {
+    outline: none;
+    -webkit-box-shadow: 2px 2px 2px var(--module-color-yellow);
+    box-shadow: 2px 2px 2px var(--module-color-yellow);
+}
+
 #pokemon-list {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
