@@ -11,9 +11,36 @@ let pokemonRepository = (function() {
         }
     }
 
+    function filter(name) {
+        return pokemonList.filter(pokemonList => pokemonList.name === name);
+    }
+
     function getAll() {
         return pokemonList;
     }
+
+    // Function to capitalize first letter of pokemon name
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    function findPokemon(searchName) {
+        //jQuery syntax
+        //clear all buttons on page when user types in search box
+        $("#pokemon-list").empty();
+
+        //Add pokemon buttons in which the name includes the search string
+        pokemonList.forEach(pokemon => {
+            if (
+                capitalizeFirstLetter(pokemon.name).indexOf(
+                    capitalizeFirstLetter(searchName)
+                ) > -1
+            ) {
+                addListItem(pokemon);
+            }
+        });
+    }
+
 
     function addListItem(pokemon) {
 
@@ -48,7 +75,7 @@ let pokemonRepository = (function() {
             // results refers to the key of the json object which contains the list
             json.results.forEach(function(item) {
                 let pokemon = {
-                    name: item.name,
+                    name: capitalizeFirstLetter(item.name),
                     detailsUrl: item.url
                 };
                 add(pokemon);
@@ -94,7 +121,9 @@ let pokemonRepository = (function() {
         addListItem,
         loadList,
         loadDetails,
-        showDetails
+        showDetails,
+        findPokemon,
+        filter
 
     };
 })();
