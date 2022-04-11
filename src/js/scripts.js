@@ -11,10 +11,6 @@ let pokemonRepository = (function() {
         }
     }
 
-    function filter(name) {
-        return pokemonList.filter(pokemonList => pokemonList.name === name);
-    }
-
     function getAll() {
         return pokemonList;
     }
@@ -23,7 +19,7 @@ let pokemonRepository = (function() {
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
-
+    // Function retrieves from input field via onkeyup-event
     function findPokemon(searchName) {
         //jQuery syntax
         //clear all buttons on page when user types in search box
@@ -122,8 +118,8 @@ let pokemonRepository = (function() {
         loadList,
         loadDetails,
         showDetails,
-        findPokemon,
-        filter
+        findPokemon
+
 
     };
 })();
